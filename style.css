@@ -1,0 +1,80 @@
+html, body {
+  font-size: 14px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.wrapper {
+  padding: 0.5rem 2rem;
+  flex-grow: 1;
+  text-align: center;
+  border: 1px solid black;
+  max-width: 420px;
+  font-family: sans-serif;
+}
+
+.black {
+  color: black;
+}
+.white {
+  color: white;
+}
+.gray {
+  color: gray;
+}
+.bg-red {
+  background-color: red;
+}
+.bg-blue {
+  background-color: blue;
+}
+.bg-green {
+  background-color: green;
+}
+.bg-black {
+  background-color: black;
+}
+.bg-white {
+  border: 1px solid black;
+}
+.big {
+  font-size: 1.5rem;
+}
+.small {
+  font-size: 0.7rem;
+}
+
+a {
+  color: inherit;
+}
+
+.actions {
+  display: flex;
+  margin: 1rem 0;
+  justify-content: space-around;
+  max-width: 420px;
+}
+
+button {
+  height: 2.5rem;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+}
+.infos label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 250px;
+  margin: 0.25rem 0;
+}

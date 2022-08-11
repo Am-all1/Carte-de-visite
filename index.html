@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://unpkg.com/vue@next"></script>
+  <link href="./style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="root">
+    <div class="card">
+      <div class="wrapper" :class="[theme.background, theme.color, theme.size]">
+        <h1>{{ infos.firstName }} {{ infos.lastName }}</h1>
+        <h3>{{ infos.job }} @ {{ infos.organization }}</h3>
+        <p>Phone: <a :href="`tel:${infos.phone}`">{{ infos.phone }}</a></p>
+        <p>Email: <a :href="`mailto:${infos.email}`">{{ infos.email }}</a></p>
+      </div>
+      <div class="infos">
+        <h3>Changer les valeurs de la carte de visite</h3>
+        <label>
+          Prénom
+          <input v-on:input="e => changeInfos(e, 'firstName')" />
+        </label>
+        <label>
+          Nom
+          <input v-on:input="e => changeInfos(e, 'lastName')" />
+        </label>
+        <label>
+          Profession
+          <input v-on:input="e => changeInfos(e, 'job')" />
+        </label>
+        <label>
+          Organisation
+          <input v-on:input="e => changeInfos(e, 'organization')" />
+        </label>
+        <label>
+          Phone
+          <input v-on:input="e => changeInfos(e, 'phone')" />
+        </label>
+        <label>
+          Email
+          <input type="email" v-on:input="e => changeInfos(e, 'email')" />
+        </label>
+        <br />
+        <button @click="resetFields">Reset all values</button>
+      </div>
+    </div>
+
+    <h3>Changer l'arrière-plan de la carte de visite...</h3>
+    <div class="actions">
+      <button class="bg-blue" v-on:click="changeBackground('blue')">en bleu</button>
+      <button class="bg-red" v-on:click="changeBackground('red')">en rouge</button>
+      <button class="bg-green" v-on:click="changeBackground('green')">en vert</button>
+    </div>
+    <h3>Changer la couleur de la police de la carte de visite...</h3>
+    <div class="actions">
+      <button v-for="color in ['black', 'white', 'gray']" @click="changeColor(color)"
+        :class="[color, color === 'white' ? 'bg-black' : 'bg-white']">{{ color }}</button>
+    </div>
+
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>
